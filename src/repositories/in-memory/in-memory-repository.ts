@@ -1,7 +1,7 @@
 import { Prisma, User } from '@prisma/client'
-import { UserRepository } from '../users-repository'
+import { UsersRepository } from '../users-repository'
 
-export class InMemoryDatabase implements UserRepository {
+export class InMemoryUsersRepository implements UsersRepository {
   public items: User[] = []
 
   async create(data: Prisma.UserCreateInput) {
