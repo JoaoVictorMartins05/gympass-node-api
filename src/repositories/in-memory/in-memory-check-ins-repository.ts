@@ -32,8 +32,6 @@ export class InMemoryCheckInsRepository implements CheckInsRepository {
       return checkin.user_id === userId && isOnSameDate
     })
 
-    console.log(date)
-
     if (!checkOnSameDate) {
       return null
     }

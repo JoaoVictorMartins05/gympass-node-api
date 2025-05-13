@@ -24,11 +24,11 @@ describe('Get User Profile Use Case', () => {
       userId: createdUser.id,
     })
 
-    expect(user.id).toEqual(createdUser.id)
+    await expect(user.id).toEqual(createdUser.id)
   })
 
   test('User cannot be found with wrong id', async () => {
-    expect(async () => {
+    await expect(async () => {
       await sut.execute({
         userId: 'not exists',
       })

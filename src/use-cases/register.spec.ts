@@ -20,7 +20,7 @@ describe('Register Use Case', () => {
       password: '123456',
     })
 
-    expect(user.id).toEqual(expect.any(String))
+    await expect(user.id).toEqual(expect.any(String))
   })
 
   test('User hash password must be encrypted', async () => {
@@ -35,7 +35,7 @@ describe('Register Use Case', () => {
       user.password_hash,
     )
 
-    expect(isPasswordCorrectlyHashed).toBe(true)
+    await expect(isPasswordCorrectlyHashed).toBe(true)
   })
 
   test('User must not have duplicate email', async () => {
@@ -47,7 +47,7 @@ describe('Register Use Case', () => {
       password: '123456',
     })
 
-    expect(async () => {
+    await expect(async () => {
       await sut.execute({
         name: 'new john',
         email,

@@ -5,8 +5,6 @@ export class InMemoryGymsRepository implements GymsRepository {
   public items: Gym[] = []
 
   async findById(gymId: string) {
-    console.log(gymId)
-
     const gym = this.items.find((item) => item.id === gymId)
 
     if (!gym) {
