@@ -29,4 +29,10 @@ export class InMemoryGymsRepository implements GymsRepository {
 
     return gym
   }
+
+  async searchMany(name: string, page: number) {
+    return this.items
+      .filter((item) => item.title.includes(name))
+      .slice((page - 1) * 20, page * 20)
+  }
 }
