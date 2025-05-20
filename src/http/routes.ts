@@ -1,4 +1,4 @@
-import { FastifyInstance } from 'fastify/types/instance'
+import { FastifyInstance } from 'fastify'
 import { register } from './controllers/register'
 import { authenticate } from './controllers/authenticate'
 import { profile } from './controllers/profile'
